@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Do not rewrite assets/ directory
+    RewriteCond %{REQUEST_URI} !^/riiiiiida/assets/
+    # Redirect everything else to /public/ without creating loops
+    RewriteCond %{REQUEST_URI} !^/riiiiiida/public/
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>

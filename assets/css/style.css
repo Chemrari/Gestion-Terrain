@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --primary-light: rgba(37, 99, 235, 0.08);
+    --secondary: #0F172A;
+    --success: #22C55E;
+    --success-light: rgba(34, 197, 94, 0.1);
+    --danger: #EF4444;
+    --danger-light: rgba(239, 68, 68, 0.1);
+    --warning: #F59E0B;
+    --info: #06B6D4;
+    --bg-light: #F8FAFC;
+    --border-color: #E2E8F0;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --font-sans: 'Outfit', 'Inter', sans-serif;
+    --sidebar-width: 260px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 12px;
+}
+
+/* Premium Dashboard Layout */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--secondary);
+    color: #F8FAFC;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(15, 23, 42, 0.05);
+}
+
+.sidebar .brand {
+    padding: 24px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar .brand span {
+    color: var(--primary);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 16px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    margin-bottom: 6px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #94A3B8;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-menu a i {
+    margin-right: 12px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu li.active a {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #FFFFFF;
+}
+
+.sidebar-menu li.active a {
+    background-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.sidebar-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.main-content {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+    transition: all 0.3s ease;
+    min-height: 100vh;
+}
+
+/* Public Navbar */
+.public-navbar {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.public-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.public-navbar .navbar-brand span {
+    color: var(--primary);
+}
+
+.public-navbar .nav-link {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.public-navbar .nav-link:hover,
+.public-navbar .nav-link.active {
+    color: var(--primary);
+}
+
+/* Landing Page Hero */
+.hero-section {
+    padding: 100px 0 60px 0;
+    background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, rgba(255, 255, 255, 0) 90%);
+}
+
+.search-box {
+    box-shadow: var(--shadow-lg);
+    border-radius: 16px;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+}
+
+/* Styled Cards */
+.card-stat {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #FFFFFF;
+}
+
+.card-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-stat .icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Tables Styling */
+.table-responsive {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: #FFFFFF;
+}
+
+.custom-table {
+    margin-bottom: 0;
+}
+
+.custom-table th {
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 20px;
+}
+
+.custom-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Badges */
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.badge-status.en_attente {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.badge-status.acceptee {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+}
+
+.badge-status.refusee {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+.badge-status.terminee {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.badge-status.disponible {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.badge-status.reserve {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* Toast/Alert Animations */
+.alert-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    min-width: 300px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 8px;
+    border: none;
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive sidebars */
+@media (max-width: 991.98px) {
+    .sidebar {
+        left: calc(-1 * var(--sidebar-width));
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Terrain Card design */
+.terrain-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #FFFFFF;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.terrain-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.terrain-card .img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.terrain-card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.terrain-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+.terrain-card .price-tag {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background-color: var(--secondary);
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.terrain-card .status-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 10;
+}
+
+/* --------------------------------------------------------
+   Utility color helpers missing from Bootstrap by default
+-------------------------------------------------------- */
+.bg-primary-light   { background-color: var(--primary-light) !important; }
+.bg-success-light   { background-color: var(--success-light) !important; }
+.bg-danger-light    { background-color: var(--danger-light)  !important; }
+.text-primary       { color: var(--primary)  !important; }
+.text-secondary-dark{ color: var(--secondary) !important; }
+
+/* Icon box size inside stat cards */
+.card-stat .icon-box {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+/* Sidebar active slide-in animation on mobile */
+@media (max-width: 991.98px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+        left: 0 !important; /* override fixed left offset */
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0 !important;
+        padding: 20px 16px;
+    }
+    .main-content > .d-flex { padding-top: 52px; }
+}
+
+/* Ensure table images look polished */
+.custom-table td img {
+    object-fit: cover;
+}
+
+/* Hero gradient overlay on landing */
+.hero-gradient {
+    background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
+}
+
+/* Form labels consistent spacing */
+.form-label {
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* Rounded pill nav links on public pages */
+.public-navbar .nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Stat number text */
+.stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+}
