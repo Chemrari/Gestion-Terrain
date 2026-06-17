@@ -7,11 +7,9 @@ if (!function_exists('base_url')) {
         $protocol = $isHttps ? 'https://' : 'http://';
         $host     = $_SERVER['HTTP_HOST'] ?? 'localhost';
 
-        // Get the directory that contains index.php (= /riiiiiida/public)
         $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '/index.php');
-        $scriptDir  = rtrim(dirname($scriptName), '/'); // e.g. /riiiiiida/public
+        $scriptDir  = rtrim(dirname($scriptName), '/');
 
-        // Strip the trailing /public segment to get the project base
         $base = preg_replace('#/public$#i', '', $scriptDir);
         $base = rtrim($base, '/');
 

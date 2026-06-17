@@ -1,7 +1,6 @@
 <IfModule mod_rewrite.c>
     Options -MultiViews
     RewriteEngine On
-    RewriteBase /riiiiiida/public/
 
     # Allow direct access to real files and directories (CSS, JS, images, uploads)
     RewriteCond %{REQUEST_FILENAME} !-f

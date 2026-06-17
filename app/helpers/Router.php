@@ -14,11 +14,9 @@ class Router {
             $uriPath = '/';
         }
 
-        // Get the script directory (e.g., /riiiiiida/public)
         $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME']);
         $scriptDir  = rtrim(dirname($scriptName), '/');
 
-        // Get the base directory without /public (e.g., /riiiiiida)
         $baseDir = preg_replace('#/public$#i', '', $scriptDir);
         $baseDir = rtrim($baseDir, '/');
 
