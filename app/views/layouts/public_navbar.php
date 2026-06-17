@@ -10,7 +10,7 @@ if (strpos($current_uri, 'public') === 0) {
 ?>
 <nav class="navbar navbar-expand-lg public-navbar sticky-top py-3">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="<?= base_url('/') ?>">
+        <a class="navbar-brand d-flex align-items-center" href="<?= base_url('home') ?>">
             <i class="bi bi-geo-fill text-primary me-2"></i>
             <span>Geo</span>Terrain
         </a>
@@ -20,7 +20,7 @@ if (strpos($current_uri, 'public') === 0) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link <?= ($current_uri === '' || $current_uri === 'home') ? 'active' : '' ?>" href="<?= base_url('/') ?>">Accueil</a>
+                    <a class="nav-link <?= ($current_uri === '' || $current_uri === 'home') ? 'active' : '' ?>" href="<?= base_url('home') ?>">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= $current_uri === 'about' ? 'active' : '' ?>" href="<?= base_url('about') ?>">À propos</a>
