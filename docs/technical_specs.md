@@ -71,27 +71,31 @@ L'application est construite sur un patron de conception **Modèle-Vue-Contrôle
 ### 3.1 Diagramme des Cas d'Utilisation (Use Case)
 
 ```mermaid
-rect id["Application de Gestion de Terrains"]
-    usecase UC1 as "S'inscrire / Se connecter"
-    usecase UC2 as "Consulter les terrains (Filtres)"
-    usecase UC3 as "Réserver un terrain"
-    usecase UC4 as "Annuler une réservation"
-    usecase UC5 as "Gérer l'inventaire des terrains (CRUD)"
-    usecase UC6 as "Valider les réservations (Accepter/Refuser)"
-    usecase UC7 as "Enregistrer un paiement"
-    usecase UC8 as "Visualiser les rapports statistiques"
-end
+flowchart LR
+    Client[Client]
+    Admin[Admin]
 
-Client --> UC1
-Client --> UC2
-Client --> UC3
-Client --> UC4
+    subgraph S["Application de Gestion de Terrains"]
+        UC1["S'inscrire / Se connecter"]
+        UC2["Consulter les terrains (Filtres)"]
+        UC3["Réserver un terrain"]
+        UC4["Annuler une réservation"]
+        UC5["Gérer l'inventaire des terrains (CRUD)"]
+        UC6["Valider les réservations (Accepter/Refuser)"]
+        UC7["Enregistrer un paiement"]
+        UC8["Visualiser les rapports statistiques"]
+    end
 
-Admin --> UC1
-Admin --> UC5
-Admin --> UC6
-Admin --> UC7
-Admin --> UC8
+    Client --> UC1
+    Client --> UC2
+    Client --> UC3
+    Client --> UC4
+
+    Admin --> UC1
+    Admin --> UC5
+    Admin --> UC6
+    Admin --> UC7
+    Admin --> UC8
 ```
 
 ### 3.2 Diagramme de Classes
